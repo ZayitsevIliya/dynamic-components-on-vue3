@@ -1,13 +1,13 @@
 <script>
 export default {
   props: {
-    openSettingsBtnFucntion: Function,
+    openSettingsBtnFunction: Function,
   },
 };
 </script>
 
 <template>
-  <div @click="openSettingsBtnFucntion" class="open-settings-btn">
+  <div @click="openSettingsBtnFunction" class="open-settings-btn">
     <img src="../../../assets/settings-icon.svg" alt="Settings icon" />
   </div>
 </template>

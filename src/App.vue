@@ -1,19 +1,19 @@
 <script>
-import Content from "./components/applications/content.vue";
-import Settings from "./components/applications/settings.vue";
+import ApplicationsComponent from "./components/applicationsComponent.vue";
+import SettingsComponent from "./components/settingsComponent.vue";
 
 export default {
   components: {
-    Content,
-    Settings,
+    ApplicationsComponent,
+    SettingsComponent,
   },
 };
 </script>
 
 <template>
   <div class="main-conteiner">
-    <Content />
-    <Settings />
+    <ApplicationsComponent />
+    <SettingsComponent />
   </div>
 </template>
 
