@@ -1,10 +1,26 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import reactions from "./reactions";
+import { createStore } from "vuex";
 
-Vue.use(Vuex);
+const store = createStore({
+  state() {
+    return {
+      currentApplication: "OpenAppBtn",
+      selectedApplication: "VForApp",
+    };
+  },
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  mutations: {
+    closeApp(state) {
+      state.currentApplication = "OpenAppBtn";
+    },
+
+    startSeletedApp(state, selectedApp) {
+      state.currentApplication = selectedApp;
+    },
+
+    setSelectedApp(state, app) {
+      state.selectedApplication = app;
+    },
+  },
 });
+
+export default store;

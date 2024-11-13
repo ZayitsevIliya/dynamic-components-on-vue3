@@ -1,13 +1,23 @@
 <script>
+import { mapMutations, mapState } from "vuex";
+
 export default {
-  props: {
-    openAppBtnFucntion: Function,
+  computed: {
+    ...mapState(["selectedApplication"]),
+  },
+
+  methods: {
+    ...mapMutations(["startSeletedApp"]),
+    openApp() {
+      this.startSeletedApp(this.selectedApplication);
+      console.log(this.selectedApplication);
+    },
   },
 };
 </script>
 
 <template>
-  <div @click="openAppBtnFucntion" class="open-app-btn">
+  <div @click="openApp" class="open-app-btn">
     <img src="../../../assets/play-icon.svg" alt="Play icon" />
   </div>
 </template>

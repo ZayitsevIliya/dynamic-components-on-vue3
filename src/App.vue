@@ -20,10 +20,21 @@ export default {
 <style scoped>
 .main-conteiner {
   display: flex;
+  flex-wrap: wrap;
+
   margin: auto;
   margin-top: 300px;
 
   width: 600px;
-  min-width: 600px;
+  min-width: 300px;
+}
+
+@media (max-width: 580px) {
+  .main-conteiner {
+    margin-top: 150px;
+    width: 300px;
+
+    margin-left: auto;
+  }
 }
 </style>

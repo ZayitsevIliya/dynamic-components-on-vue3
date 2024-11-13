@@ -1,13 +1,23 @@
 <script>
-import OpenSttingsBtn from "./ui/buttons/openSttingsBtn.vue";
+import SettingsMenu from "@/components/settingsMenu.vue";
+import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
+import OpenSttingsBtn from "@/components/ui/buttons/openSttingsBtn.vue";
 
 export default {
+  data() {
+    return {
+      settingsMenuOpen: false,
+    };
+  },
+
   components: {
     OpenSttingsBtn,
+    SettingsMenu,
+    CrossBtn,
   },
   methods: {
-    check() {
-      alert("check");
+    switchSettingsMenuState() {
+      this.settingsMenuOpen = !this.settingsMenuOpen;
     },
   },
 };
@@ -15,7 +25,16 @@ export default {
 
 <template>
   <article class="settings-component">
-    <OpenSttingsBtn :openSettingsBtnFunction="check" />
+    <CrossBtn
+      :color="'white'"
+      :crossBtnFunction="switchSettingsMenuState"
+      v-if="settingsMenuOpen"
+    />
+    <OpenSttingsBtn
+      :openSettingsBtnFunction="switchSettingsMenuState"
+      v-if="!settingsMenuOpen"
+    />
+    <SettingsMenu v-if="settingsMenuOpen" />
   </article>
 </template>
 
@@ -33,5 +52,14 @@ export default {
   border-radius: 0px 30px 30px 0px;
 
   display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 580px) {
+  .settings-component {
+    border: 4px solid #000;
+    border-top: 2px solid #000;
+    border-radius: 0px 0px 30px 30px;
+  }
 }
 </style>
