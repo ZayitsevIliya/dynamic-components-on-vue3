@@ -29,7 +29,9 @@ export default {
 
 <template>
   <article class="applications-component">
-    <component :is="currentApplication || 'AppIsUndefined'" />
+    <keep-alive>
+      <component :is="currentApplication || 'AppIsUndefined'" />
+    </keep-alive>
   </article>
 </template>
 

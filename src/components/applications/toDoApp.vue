@@ -44,7 +44,8 @@ export default {
   <CrossBtn :color="'black'" :crossBtnFunction="closeApp" />
   <div class="to-do-app">
     <div class="new-todo">
-      <input v-model="newTodo" type="text" />
+      <input v-model="newTodo" type="text" placeholder="Insert todo text" />
+
       <button
         @click="addNewTodo"
         class="todo-add"
