@@ -44,7 +44,7 @@ export default {
 <template>
   <div class="settings-menu-container">
     <div class="settings-menu">
-      <div class="selectItem">
+      <div name="Aplictions" class="selectItem">
         <label for="selectApp">Applications:</label>
         <select
           :value="selectedApplication"
@@ -54,7 +54,7 @@ export default {
         >
           <option value="VForApp">V-for</option>
           <option value="">V-if</option>
-          <option value="">V-show</option>
+          <option value="VShowApp">V-show</option>
           <option value="">Created</option>
           <option value="">Computed</option>
           <option value="">Mounted</option>
@@ -68,14 +68,14 @@ export default {
           <option value="">Custom select</option>
         </select>
       </div>
-      <div class="selectItem">
+      <div name="Themes" class="selectItem">
         <label for="selectTheme">Themes:</label>
         <select @change="changeTheme" name="settings3" id="selectTheme">
           <option value="red-blue-theme">Red - Blue</option>
           <option value="blue-red-theme">Blue - Red</option>
         </select>
       </div>
-      <div class="selectItem">
+      <div name="Fonts" class="selectItem">
         <label for="selectFont">Font:</label>
         <select
           :value="currentFont"
@@ -87,7 +87,7 @@ export default {
           <option value="alternative-font">Alternative</option>
         </select>
       </div>
-      <div class="selectItem">
+      <div name="Font size" class="selectItem">
         <label for="selectFontSize">Font size:</label>
         <select
           :value="fontSize"
@@ -100,7 +100,7 @@ export default {
           <option value="small-font">Small</option>
         </select>
       </div>
-      <div class="selectItem">
+      <div name="Lanuage" class="selectItem">
         <label for="selectLanguage">Language:</label>
         <select name="Language" id="selectLanguage">
           <option value="2">English</option>

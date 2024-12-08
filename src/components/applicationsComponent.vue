@@ -4,6 +4,7 @@ import ToDoApp from "@/components/applications/toDoApp.vue";
 import { mapState } from "vuex";
 import VForApp from "@/components/applications/VForApp.vue";
 import AppIsUndefined from "@/components/applications/AppIsUndefined.vue";
+import VShowApp from "@/components/applications/VShowApp.vue";
 
 export default {
   components: {
@@ -11,6 +12,7 @@ export default {
     ToDoApp,
     VForApp,
     AppIsUndefined,
+    VShowApp,
   },
 
   computed: {
