@@ -4,3 +4,28 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Angry";
+  src: url("@/assets/fonts/Angry.otf");
+}
+
+.classic-font {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.alternative-font {
+  font-family: Angry;
+}
+
+.small-font {
+  font-size: small;
+}
+
+.medium-font {
+  font-size: medium;
+}
+
+.large-font {
+  font-size: large;
+}

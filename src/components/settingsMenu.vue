@@ -2,21 +2,42 @@
 import { mapMutations, mapState } from "vuex";
 
 export default {
-  data() {
-    return {
-      theme: "RedBlue",
-    };
-  },
-
   methods: {
-    ...mapMutations(["setSelectedApp"]),
-    changeApp(app) {
-      let application = app.target.value;
+    ...mapMutations([
+      "setSelectedApp",
+      "setSelectedFont",
+      "setSelectedFontSize",
+      "setSelectedTheme",
+    ]),
+    changeApp(selectedApplication) {
+      let application = selectedApplication.target.value;
       this.setSelectedApp(application);
+    },
+
+    changeFont(selectedFont) {
+      let font = selectedFont.target.value;
+      this.setSelectedFont(font);
+    },
+
+    changeFontSize(selectedSize) {
+      let size = selectedSize.target.value;
+      this.setSelectedFontSize(size);
+    },
+
+    changeTheme(selectedTheme) {
+      let theme = selectedTheme.target.value;
+      this.setSelectedTheme(theme);
     },
   },
 
-  computed: {},
+  computed: {
+    ...mapState([
+      "currentApplication",
+      "selectedApplication",
+      "currentFont",
+      "fontSize",
+    ]),
+  },
 };
 </script>
 
@@ -25,7 +46,12 @@ export default {
     <div class="settings-menu">
       <div class="selectItem">
         <label for="selectApp">Applications:</label>
-        <select @change="changeApp" name="settings" id="selectApp">
+        <select
+          :value="selectedApplication"
+          @change="changeApp"
+          name="settings"
+          id="selectApp"
+        >
           <option value="VForApp">V-for</option>
           <option value="">V-if</option>
           <option value="">V-show</option>
@@ -44,29 +70,34 @@ export default {
       </div>
       <div class="selectItem">
         <label for="selectTheme">Themes:</label>
-        <select
-          @change="changeTheme"
-          v-model="this.theme"
-          name="settings3"
-          id="selectTheme"
-        >
-          <option value="RedBlue">Red - Blue</option>
-          <option value="BlueRed">Blue - Red</option>
+        <select @change="changeTheme" name="settings3" id="selectTheme">
+          <option value="red-blue-theme">Red - Blue</option>
+          <option value="blue-red-theme">Blue - Red</option>
         </select>
       </div>
       <div class="selectItem">
         <label for="selectFont">Font:</label>
-        <select name="settings2" id="selectFont">
-          <option value="1">Times New Roman</option>
-          <option value="2">Arial</option>
+        <select
+          :value="currentFont"
+          @change="changeFont"
+          name="settings2"
+          id="selectFont"
+        >
+          <option value="classic-font">Classic</option>
+          <option value="alternative-font">Alternative</option>
         </select>
       </div>
       <div class="selectItem">
-        <label for="selectFontSize">Fontsize:</label>
-        <select name="Fontsize" id="selectFontSize">
-          <option value="3">Large</option>
-          <option value="2" selected="selected">Medium</option>
-          <option value="1">Small</option>
+        <label for="selectFontSize">Font size:</label>
+        <select
+          :value="fontSize"
+          @change="changeFontSize"
+          name="FontSize"
+          id="selectFontSize"
+        >
+          <option value="large-font">Large</option>
+          <option value="medium-font">Medium</option>
+          <option value="small-font">Small</option>
         </select>
       </div>
       <div class="selectItem">
@@ -86,22 +117,18 @@ export default {
   height: 100%;
 }
 .settings-menu {
-  width: 80%;
+  width: 60%;
 
-  margin-left: auto;
+  margin: auto;
 
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   flex-direction: column;
 }
 
 .selectItem {
   display: flex;
   flex-direction: column;
-
-  color: white;
-  font-size: larger;
-  font-family: "Times New Roman", Times, serif;
 
   margin-bottom: 3%;
 }

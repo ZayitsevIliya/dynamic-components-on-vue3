@@ -2,6 +2,7 @@
 import SettingsMenu from "@/components/settingsMenu.vue";
 import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
 import OpenSttingsBtn from "@/components/ui/buttons/openSttingsBtn.vue";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -15,24 +16,28 @@ export default {
     SettingsMenu,
     CrossBtn,
   },
+
   methods: {
     switchSettingsMenuState() {
       this.settingsMenuOpen = !this.settingsMenuOpen;
     },
   },
+
+  computed: {
+    ...mapState(["currentTheme"]),
+  },
 };
 </script>
 
 <template>
-  <article class="settings-component">
-    <CrossBtn
-      :color="'white'"
-      :crossBtnFunction="switchSettingsMenuState"
-      v-if="settingsMenuOpen"
-    />
+  <article class="settings-component" :class="[this.currentTheme]">
     <OpenSttingsBtn
       :openSettingsBtnFunction="switchSettingsMenuState"
       v-if="!settingsMenuOpen"
+    />
+    <CrossBtn
+      :crossBtnFunction="switchSettingsMenuState"
+      v-if="settingsMenuOpen"
     />
     <SettingsMenu v-if="settingsMenuOpen" />
   </article>
@@ -41,8 +46,6 @@ export default {
 <style scoped>
 .settings-component {
   box-sizing: border-box;
-
-  background-color: blueviolet;
 
   height: 300px;
   width: 300px;
@@ -53,6 +56,16 @@ export default {
 
   display: flex;
   flex-direction: column;
+}
+
+.blue-red-theme {
+  background-color: red;
+  color: black;
+}
+
+.red-blue-theme {
+  background-color: blueviolet;
+  color: white;
 }
 
 @media (max-width: 580px) {

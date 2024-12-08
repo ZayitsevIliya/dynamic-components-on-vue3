@@ -1,34 +1,26 @@
 <script>
-import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
-import OpenAppBtn from "./ui/buttons/openAppBtn.vue";
-import ToDoApp from "./applications/toDoApp.vue";
-import { mapMutations, mapState } from "vuex";
-import VForApp from "./applications/VForApp.vue";
-import AppIsUndefined from "./applications/AppIsUndefined.vue";
+import OpenAppBtn from "@/components/ui/buttons/openAppBtn.vue";
+import ToDoApp from "@/components/applications/toDoApp.vue";
+import { mapState } from "vuex";
+import VForApp from "@/components/applications/VForApp.vue";
+import AppIsUndefined from "@/components/applications/AppIsUndefined.vue";
 
 export default {
-  data() {
-    return {
-      appIsOpen: false,
-    };
-  },
-
   components: {
     OpenAppBtn,
-    CrossBtn,
     ToDoApp,
     VForApp,
     AppIsUndefined,
   },
 
   computed: {
-    ...mapState(["currentApplication"]),
+    ...mapState(["currentApplication", "currentTheme"]),
   },
 };
 </script>
 
 <template>
-  <article class="applications-component">
+  <article class="applications-component" :class="[this.currentTheme]">
     <keep-alive>
       <component :is="currentApplication || 'AppIsUndefined'" />
     </keep-alive>
@@ -39,8 +31,6 @@ export default {
 .applications-component {
   box-sizing: border-box;
 
-  background-color: red;
-
   height: 300px;
   width: 300px;
 
@@ -50,6 +40,16 @@ export default {
 
   display: flex;
   flex-direction: column;
+}
+
+.red-blue-theme {
+  background-color: red;
+  color: black;
+}
+
+.blue-red-theme {
+  background-color: blueviolet;
+  color: white;
 }
 
 @media (max-width: 580px) {

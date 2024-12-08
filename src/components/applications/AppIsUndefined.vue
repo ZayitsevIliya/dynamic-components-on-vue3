@@ -1,6 +1,6 @@
 <script>
 import { mapMutations } from "vuex";
-import CrossBtn from "../ui/buttons/crossBtn.vue";
+import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
 
 export default {
   components: {

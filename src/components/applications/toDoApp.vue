@@ -1,6 +1,6 @@
 <script>
 import { capitalize } from "vue";
-import CrossBtn from "../ui/buttons/crossBtn.vue";
+import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -16,7 +16,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["currentApplication"]),
+    ...mapState(["currentApplication", "currentFont", "fontSize"]),
     disableButton() {
       return this.newTodo == "";
     },
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <CrossBtn :color="'black'" :crossBtnFunction="closeApp" />
+  <CrossBtn :crossBtnFunction="closeApp" />
   <div class="to-do-app">
     <div class="new-todo">
       <input v-model="newTodo" type="text" placeholder="Insert todo text" />
@@ -56,7 +56,11 @@ export default {
     </div>
     <h1 class="title">Todo list:</h1>
     <div class="todo-list">
-      <div class="todo" v-for="(todo, index) in todos" :key="index">
+      <div
+        :class="['todo', this.currentFont, this.fontSize]"
+        v-for="(todo, index) in todos"
+        :key="index"
+      >
         <p class="todo-text">{{ index + 1 }}. {{ todo }}</p>
         <button class="delete-btn" @click="deleteTodo(index)">X</button>
       </div>
@@ -64,7 +68,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .to-do-app {
   width: 85%;
   height: 85%;
@@ -82,7 +86,6 @@ export default {
   margin: 0;
   margin: 5%;
   text-align: center;
-  font-size: 24px;
 }
 
 .todo-list {
@@ -102,8 +105,6 @@ export default {
 .todo-text {
   width: 80%;
   margin: 2%;
-
-  font-size: 20px;
   word-break: break-all;
 }
 

@@ -1,7 +1,7 @@
-import "./assets/main.css";
+import "@/assets/main.css";
 
 import { createApp } from "vue";
-import App from "./App.vue";
-import Store from "./store/index";
+import App from "@/App.vue";
+import Store from "@/store/store";
 
 createApp(App).use(Store).mount("#app");

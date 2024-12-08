@@ -1,23 +1,28 @@
 <script>
-import ApplicationsComponent from "./components/applicationsComponent.vue";
-import SettingsComponent from "./components/settingsComponent.vue";
+import { mapState } from "vuex";
+import ApplicationsComponent from "@/components/applicationsComponent.vue";
+import SettingsComponent from "@/components/settingsComponent.vue";
 
 export default {
   components: {
     ApplicationsComponent,
     SettingsComponent,
   },
+
+  computed: {
+    ...mapState(["currentFont", "fontSize"]),
+  },
 };
 </script>
 
 <template>
-  <div class="main-conteiner">
+  <div class="main-conteiner" :class="[this.currentFont, this.fontSize]">
     <ApplicationsComponent />
     <SettingsComponent />
   </div>
 </template>
 
-<style scoped>
+<style>
 .main-conteiner {
   display: flex;
   flex-wrap: wrap;
