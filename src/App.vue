@@ -1,7 +1,7 @@
 <script>
 import { mapState } from "vuex";
-import ApplicationsComponent from "@/components/applicationsComponent.vue";
-import SettingsComponent from "@/components/settingsComponent.vue";
+import ApplicationsComponent from "@/components/ApplicationsComponent.vue";
+import SettingsComponent from "@/components/SettingsComponent.vue";
 
 export default {
   components: {

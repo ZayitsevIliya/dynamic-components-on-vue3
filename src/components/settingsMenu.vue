@@ -52,19 +52,19 @@ export default {
           name="settings"
           id="selectApp"
         >
-          <option value="VForApp">V-for</option>
-          <option value="">V-if</option>
-          <option value="VShowApp">V-show</option>
+          <option value="VForApp">V-for ✔</option>
+          <option value="VIfApp">V-if ✔</option>
+          <option value="VShowApp">V-show ✔</option>
           <option value="">Created</option>
           <option value="">Computed</option>
           <option value="">Mounted</option>
-          <option value="">Data</option>
+          <option value="ModalWindowApp">Modal window</option>
           <option value="">JSON import</option>
           <option value="">Events</option>
           <option value="">Methods</option>
-          <option value="">V-model</option>
-          <option value="">Watch</option>
-          <option value="ToDoApp">Todo</option>
+          <option value="VModelApp">V-model ✔</option>
+          <option value="WatchApp">Watch ✔</option>
+          <option value="ToDoApp">Todo ✔</option>
           <option value="">Custom select</option>
         </select>
       </div>
@@ -100,7 +100,7 @@ export default {
           <option value="small-font">Small</option>
         </select>
       </div>
-      <div name="Lanuage" class="selectItem">
+      <div name="Language" class="selectItem">
         <label for="selectLanguage">Language:</label>
         <select name="Language" id="selectLanguage">
           <option value="2">English</option>

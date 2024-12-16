@@ -1,7 +1,7 @@
 <script>
 import { capitalize } from "vue";
-import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
-import { mapMutations, mapState } from "vuex";
+import { mapState } from "vuex";
+import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
 
 export default {
   data() {
@@ -12,7 +12,7 @@ export default {
   },
 
   components: {
-    CrossBtn,
+    CloseAppBtn,
   },
 
   computed: {
@@ -27,7 +27,6 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["closeApp"]),
     addNewTodo() {
       this.todos.push(capitalize(this.newTodo));
       this.newTodo = "";
@@ -41,7 +40,7 @@ export default {
 </script>
 
 <template>
-  <CrossBtn :crossBtnFunction="closeApp" />
+  <CloseAppBtn />
   <div class="to-do-app">
     <div class="new-todo">
       <input v-model="newTodo" type="text" placeholder="Insert todo text" />

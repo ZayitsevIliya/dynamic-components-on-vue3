@@ -1,7 +1,7 @@
 <script>
-import SettingsMenu from "@/components/settingsMenu.vue";
-import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
-import OpenSttingsBtn from "@/components/ui/buttons/openSttingsBtn.vue";
+import SettingsMenu from "@/components/SettingsMenu.vue";
+import CrossBtn from "@/components/ui/buttons/CrossBtn.vue";
+import OpenSttingsBtn from "@/components/ui/buttons/OpenSttingsBtn.vue";
 import { mapState } from "vuex";
 
 export default {

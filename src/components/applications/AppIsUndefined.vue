@@ -1,20 +1,15 @@
 <script>
-import { mapMutations } from "vuex";
-import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
+import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
 
 export default {
   components: {
-    CrossBtn,
-  },
-
-  methods: {
-    ...mapMutations(["closeApp"]),
+    CloseAppBtn,
   },
 };
 </script>
 
 <template>
-  <CrossBtn :crossBtnFunction="closeApp" />
+  <CloseAppBtn />
   <div class="app-undefined-container">
     <h2>App is undefined :(</h2>
   </div>

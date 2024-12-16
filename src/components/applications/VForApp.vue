@@ -1,10 +1,10 @@
 <script>
-import { mapMutations, mapState } from "vuex";
-import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
+import { mapState } from "vuex";
+import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
 
 export default {
   components: {
-    CrossBtn,
+    CloseAppBtn,
   },
 
   data() {
@@ -15,7 +15,6 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["closeApp"]),
     handlingWords() {
       this.wordsArray = this.enteredWords.split(" ").filter((word) => {
         return word != "";
@@ -31,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <CrossBtn :crossBtnFunction="closeApp" />
+  <CloseAppBtn />
   <div class="v-for-container">
     <label>
       <span :class="['inputTitle', this.currentFont]"

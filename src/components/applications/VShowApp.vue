@@ -1,6 +1,5 @@
 <script>
-import { mapMutations } from "vuex";
-import CrossBtn from "@/components/ui/buttons/crossBtn.vue";
+import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
 
 export default {
   data() {
@@ -10,11 +9,10 @@ export default {
   },
 
   components: {
-    CrossBtn,
+    CloseAppBtn,
   },
 
   methods: {
-    ...mapMutations(["closeApp"]),
     showOrHidePicture() {
       this.pictureVisible = !this.pictureVisible;
     },
@@ -22,7 +20,7 @@ export default {
 };
 </script>
 <template>
-  <CrossBtn :crossBtnFunction="closeApp" />
+  <CloseAppBtn />
   <div class="v-show-app">
     <div class="button">
       <button @click="showOrHidePicture" v-show="!pictureVisible">
