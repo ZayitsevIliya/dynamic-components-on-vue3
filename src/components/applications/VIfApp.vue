@@ -1,26 +1,35 @@
 <script>
 import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
+import { mapState } from "vuex";
 
 export default {
   data() {
     return {
       enteredText: "",
-      expectedText: "Hello world!",
+      expectedText: "Hello world",
     };
   },
 
   components: {
     CloseAppBtn,
   },
+
+  computed: {
+    ...mapState(["currentLanguage"]),
+  },
 };
 </script>
 <template>
   <CloseAppBtn />
   <div class="v-if-app">
-    <span>Enter: Hello world!</span>
+    <span>{{ currentLanguage.applications.v_if.title }}</span>
     <input v-model="enteredText" type="text" />
-    <p v-if="enteredText == expectedText">Right. Good job!</p>
-    <p v-else-if="enteredText.slice(0, 5) == 'Hello'">You close...</p>
+    <p v-if="enteredText == expectedText">
+      {{ currentLanguage.applications.v_if.finish }}
+    </p>
+    <p v-else-if="enteredText.slice(0, 5) == 'Hello'">
+      {{ currentLanguage.applications.v_if.half_job }}
+    </p>
   </div>
 </template>
 <style scoped>

@@ -2,6 +2,7 @@
 import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
 import ModalWindow from "@/components/ui/Modals/ModalWindow.vue";
 import ModalExample from "@/components/ui/Modals/ModalExample.vue";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -21,13 +22,17 @@ export default {
       this.modalWindowOpen = !this.modalWindowOpen;
     },
   },
+
+  computed: {
+    ...mapState(["currentLanguage"]),
+  },
 };
 </script>
 <template>
   <CloseAppBtn />
   <div class="modal-window-app">
     <button @click="changeModalWindowState" class="open-window-btn">
-      Open modal window
+      {{ currentLanguage.applications.modal.open_button }}
     </button>
   </div>
   <ModalWindow

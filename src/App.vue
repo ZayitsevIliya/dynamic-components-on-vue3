@@ -10,7 +10,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["currentFont", "fontSize"]),
+    ...mapState(["currentFont", "fontSize", "currentLanguage"]),
   },
 };
 </script>

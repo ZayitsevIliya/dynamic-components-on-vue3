@@ -1,0 +1,49 @@
+{
+  "setting_menu": {
+    "applications": "Applications",
+    "themes": "Themes",
+    "font": "Font",
+    "font_size": "Font size",
+    "language": "Language",
+    "red_blue": "Red - blue",
+    "blue_red": "Blue - red",
+    "classic_font": "Classic",
+    "alternative_font": "Alternative",
+    "large_font": "Large",
+    "medium_font": "Medium",
+    "small_font": "Small"
+  },
+
+  "applications": {
+    "v_for": {
+      "title": "Enter words separeted by space",
+      "placeholder": "Entered words example",
+      "button": "Send"
+    },
+
+    "v_if": {
+      "title": "Enter: Hello world",
+      "half_job": "You close...",
+      "finish": "Right. Good job!"
+    },
+
+    "todo": {
+      "title": "Todo list",
+      "placeholder": "Insert todo text"
+    },
+
+    "modal": {
+      "open_button": "Open modal window"
+    },
+
+    "watch": {
+      "submit_button": "Submit",
+      "text_changed": "Text changed!"
+    },
+
+    "v_show": {
+      "show": "Show picture",
+      "hide": "Hide picture"
+    }
+  }
+}

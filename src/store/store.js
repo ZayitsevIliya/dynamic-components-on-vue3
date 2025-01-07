@@ -1,4 +1,6 @@
 import { createStore } from "vuex";
+import languageEng from "@/data/language/language_en.json";
+import languageRus from "@/data/language/language_ru.json";
 
 const store = createStore({
   state() {
@@ -8,6 +10,7 @@ const store = createStore({
       currentFont: "classic-font",
       fontSize: "medium-font",
       currentTheme: "red-blue-theme",
+      currentLanguage: languageEng,
     };
   },
 
@@ -34,6 +37,12 @@ const store = createStore({
 
     setSelectedTheme(state, selectedTheme) {
       state.currentTheme = selectedTheme;
+    },
+
+    setSelectedLanguage(state, selectedLanguage) {
+      selectedLanguage == "English"
+        ? (state.currentLanguage = languageEng)
+        : (state.currentLanguage = languageRus);
     },
   },
 });

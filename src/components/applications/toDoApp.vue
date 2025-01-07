@@ -16,7 +16,12 @@ export default {
   },
 
   computed: {
-    ...mapState(["currentApplication", "currentFont", "fontSize"]),
+    ...mapState([
+      "currentApplication",
+      "currentFont",
+      "fontSize",
+      "currentLanguage",
+    ]),
     disableButton() {
       return this.newTodo == "";
     },
@@ -43,7 +48,11 @@ export default {
   <CloseAppBtn />
   <div class="to-do-app">
     <div class="new-todo">
-      <input v-model="newTodo" type="text" placeholder="Insert todo text" />
+      <input
+        v-model="newTodo"
+        type="text"
+        :placeholder="currentLanguage.applications.todo.placeholder"
+      />
 
       <button
         @click="addNewTodo"
@@ -53,7 +62,7 @@ export default {
         +
       </button>
     </div>
-    <h1 class="title">Todo list:</h1>
+    <h1 class="title">{{ currentLanguage.applications.todo.title }}:</h1>
     <div class="todo-list">
       <div
         :class="['todo', this.currentFont, this.fontSize]"

@@ -1,5 +1,6 @@
 <script>
 import CloseAppBtn from "@/components/ui/buttons/CloseAppBtn.vue";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -17,6 +18,10 @@ export default {
       this.pictureVisible = !this.pictureVisible;
     },
   },
+
+  computed: {
+    ...mapState(["currentLanguage"]),
+  },
 };
 </script>
 <template>
@@ -24,10 +29,10 @@ export default {
   <div class="v-show-app">
     <div class="button">
       <button @click="showOrHidePicture" v-show="!pictureVisible">
-        Show picture
+        {{ currentLanguage.applications.v_show.show }}
       </button>
       <button @click="showOrHidePicture" v-show="pictureVisible">
-        Hide picture
+        {{ currentLanguage.applications.v_show.hide }}
       </button>
     </div>
     <div v-show="pictureVisible" class="picture">

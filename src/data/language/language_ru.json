@@ -1,0 +1,49 @@
+{
+  "setting_menu": {
+    "applications": "Приложения",
+    "themes": "Темы",
+    "font": "Шрифт",
+    "font_size": "Размер шрифта",
+    "language": "Язык",
+    "red_blue": "Красносиняя",
+    "blue_red": "Синекрасная",
+    "classic_font": "Классический",
+    "alternative_font": "Альтернативный",
+    "large_font": "Большой",
+    "medium_font": "Средний",
+    "small_font": "Маленький"
+  },
+
+  "applications": {
+    "v_for": {
+      "title": "Введите слова через пробел",
+      "placeholder": "Пример введеных слов",
+      "button": "Отправить"
+    },
+
+    "v_if": {
+      "title": "Введите: Hello world!",
+      "half_job": "Почти...",
+      "finish": "Правильно. Отличная работа!"
+    },
+
+    "todo": {
+      "title": "Список задач",
+      "placeholder": "Введите текст задачи"
+    },
+
+    "modal": {
+      "open_button": "Открыть модальное окно"
+    },
+
+    "watch": {
+      "submit_button": "Подтвердить",
+      "text_changed": "Текст изменен!"
+    },
+
+    "v_show": {
+      "show": "Показать изображение",
+      "hide": "Скрыть изображение"
+    }
+  }
+}

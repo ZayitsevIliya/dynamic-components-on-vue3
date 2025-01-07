@@ -24,7 +24,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["currentFont"]),
+    ...mapState(["currentFont", "currentLanguage"]),
   },
 };
 </script>
@@ -34,15 +34,17 @@ export default {
   <div class="v-for-container">
     <label>
       <span :class="['inputTitle', this.currentFont]"
-        >Enter words separeted by space:</span
+        >{{ currentLanguage.applications.v_for.title }}:</span
       >
       <div class="inputWords">
         <input
-          placeholder="Entered words example"
+          :placeholder="currentLanguage.applications.v_for.placeholder"
           v-model="enteredWords"
           type="text"
         />
-        <button @click="handlingWords">Send</button>
+        <button @click="handlingWords">
+          {{ currentLanguage.applications.v_for.button }}
+        </button>
       </div>
     </label>
 
