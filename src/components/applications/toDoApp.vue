@@ -92,8 +92,10 @@ export default {
 
 .title {
   margin: 0;
-  margin: 5%;
+  margin-top: 5%;
   text-align: center;
+
+  width: 100%;
 }
 
 .todo-list {

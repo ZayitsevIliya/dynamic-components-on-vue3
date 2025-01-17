@@ -64,11 +64,10 @@ export default {
           <option value="VForApp">V-for</option>
           <option value="VIfApp">V-if</option>
           <option value="VShowApp">V-show</option>
-          <option value="ModalWindowApp">Modal window</option>
           <option value="VModelApp">V-model</option>
           <option value="WatchApp">Watch</option>
           <option value="ToDoApp">Todo</option>
-          <option value="">Custom select</option>
+          <option value="ModalWindowApp">Modal window</option>
         </select>
       </div>
       <div name="Themes" class="selectItem">
@@ -140,7 +139,7 @@ export default {
   height: 100%;
 }
 .settings-menu {
-  width: 60%;
+  width: 65%;
 
   margin: auto;
 

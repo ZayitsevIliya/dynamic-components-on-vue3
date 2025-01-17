@@ -3,7 +3,6 @@ import OpenAppBtn from "@/components/ui/buttons/OpenAppBtn.vue";
 import ToDoApp from "@/components/applications/ToDoApp.vue";
 import { mapState } from "vuex";
 import VForApp from "@/components/applications/VForApp.vue";
-import AppIsUndefined from "@/components/applications/AppIsUndefined.vue";
 import VShowApp from "@/components/applications/VShowApp.vue";
 import VModelApp from "@/components/applications/VModelApp.vue";
 import WatchApp from "@/components/applications/WatchApp.vue";
@@ -15,7 +14,6 @@ export default {
     OpenAppBtn,
     ToDoApp,
     VForApp,
-    AppIsUndefined,
     VShowApp,
     VModelApp,
     WatchApp,
@@ -32,7 +30,7 @@ export default {
 <template>
   <article class="applications-component" :class="[this.currentTheme]">
     <keep-alive>
-      <component :is="currentApplication || 'AppIsUndefined'" />
+      <component :is="currentApplication" />
     </keep-alive>
   </article>
 </template>
